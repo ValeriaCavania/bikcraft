@@ -1,90 +1,10 @@
-body {
-  margin: 0px;
-  font-family: Arial, Helvetica, sans-serif;
-}
+@import url("./global/global.css");
+@import url("./utilidades/tipografia.css");
+@import url("./utilidades/cores.css");
 
-ul {
-  margin: 0px;
-  padding: 0px;
-  list-style: none;
-}
+@import url("./global/header.css");
+/*Utilidades*/
+@import url("./utilidades/componentes.css");
 
-a {
-  text-decoration: none;
-}
-
-.header-bg {
-  background-color: #000;
-}
-
-.header {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-  /*os 1200px incluem os 20px devido a essa propriedade*/
-  padding: 20px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.header-menu {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-.header-menu a {
-  color: #fff;
-  display: inline-block;
-  /*serve para q o padding nao ultrapasse o outro, tag a é inline*/
-  padding: 16px 0px;
-  font-size: 18px;
-  position: relative;
-}
-
-.header-menu a::after {
-  content: "";
-  display: block;
-  height: 2px;
-  width: 0px; /*começa sem largura, mas ao passar o mouse, aparece*/
-  background: #fff;
-  margin-top: 4px;
-  transition: 0.3s;
-  position: absolute;
-}
-
-.header-menu a:hover:after {
-  width: 100%; /*pega exatamente a largura do elemento pai*/
-}
-
-@media (max-width: 800px) {
-  .header-menu {
-    gap: 20px;
-  }
-  .header-menu a {
-    background: #111;
-    padding: 12px 16px;
-    border-radius: 4px;
-  }
-  .header-menu a:hover {
-    background-color: #2e2e2e;
-  }
-
-  .header a::after {
-    display: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .header-menu {
-    gap: 12px;
-  }
-  .header-menu a {
-    padding: 8px 12px;
-    font-size: 14px;
-  }
-}
+/*Home*/
+@import url("./home/introducao.css");
