@@ -8,6 +8,7 @@ ul {
   padding: 0px;
   list-style: none;
 }
+
 a {
   text-decoration: none;
 }
@@ -15,10 +16,27 @@ a {
 .header-bg {
   background-color: #000;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
+  /*os 1200px incluem os 20px devido a essa propriedade*/
   padding: 20px;
   max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-menu {
+  display: flex;
+  gap: 40px;
+}
+
+.header-menu a {
+  color: #fff;
+  display: inline-block;
+  /*serve para q o padding nao ultrapasse o outro, tag a é inline*/
+  padding: 16px 0px;
 }
