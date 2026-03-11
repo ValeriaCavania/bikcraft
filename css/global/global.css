@@ -6,10 +6,14 @@ body {
 }
 
 h1,
+h2,
+h3,
+h4,
 ul,
 p {
   margin: 0px;
 }
+
 ul {
   margin: 0px;
   padding: 0px;
@@ -18,10 +22,15 @@ ul {
 
 a {
   text-decoration: none;
-  color: inherit; /*herda a cor do pai*/
+  color: inherit;
+  /*herda a cor do pai*/
 }
 
 img {
   max-width: 100%;
   display: block;
+}
+
+img[src$=".jpg"] {
+  border-radius: 4px;
 }
