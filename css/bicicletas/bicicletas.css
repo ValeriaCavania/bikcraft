@@ -32,6 +32,7 @@
 .bicicletas-conteudo {
     display: grid;
     grid-template-columns: 1fr auto;
+    /* 1fr para a lista ul e auto o botao*/
     align-content: start;
 }
 
