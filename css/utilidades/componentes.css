@@ -7,7 +7,6 @@
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .botao {
@@ -27,6 +26,24 @@
 
 .botao:hover {
   background: linear-gradient(#ffb60d, #e59317);
+}
+
+/*cria a seta no botao e alinha ao conteúdo*/
+.botao.seta {
+  display: flex;
+  align-items: center;
+}
+.botao.seta::after {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 10px;
+  margin-left: 12px;
+  background-image: url("../../img/icones/seta.svg");
+  transition: transform 0.2s;
+}
+.botao.seta:hover::after {
+  transform: translateX(4px);
 }
 
 .botao.secundario {
@@ -77,7 +94,7 @@
   margin-bottom: 4px;
 }
 
-@media(max-width: 800px) {
+@media (max-width: 800px) {
   .titulo-bg {
     padding-top: 40px;
     padding-bottom: 40px;
