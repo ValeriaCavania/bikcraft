@@ -28,7 +28,7 @@
   /*o primeiro item vai ter sempre o tamanho minimo de 100%*/
 }
 
-.bicicleta-conteudo>p {
+.bicicleta-conteudo > p {
   margin-bottom: 32px;
 }
 
