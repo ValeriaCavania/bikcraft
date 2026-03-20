@@ -12,9 +12,9 @@
   margin-bottom: 4px;
 }
 
-/* .col-2 {
+.form .col-2 {
   grid-column: span 2;
-} */
+}
 
 .form input[type="text"],
 .form input[type="email"],
@@ -37,4 +37,14 @@
   border-color: var(--cor-p1);
   background: var(--cor-0);
   box-shadow: 0 0 0 2px #fea;
+}
+
+@media (max-width: 600px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .form .col-2 {
+    grid-column: 1; /*precisa redefinir a posição como coluna 1, porque definir apenas o 1fr não é suficiente, já que antes estava pra ocupar duas colunas com span 2*/
+  }
 }

@@ -22,6 +22,8 @@
     sans-serif;
   max-width: max-content;
   /*o tamanho maximo do botao será o tamanho do conteudo*/
+  border: none;
+  cursor: pointer;
 }
 
 .botao:hover {
