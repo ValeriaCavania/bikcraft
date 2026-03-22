@@ -7,7 +7,7 @@
 .form label {
   display: block;
   font:
-    600 1rem/1.5 "Poppins",
+    400 1rem/1.5 "Poppins",
     sans-serif;
   margin-bottom: 4px;
 }
@@ -27,13 +27,15 @@
   padding: 12px;
   border-radius: 4px;
   width: 100%;
-  box-sizing: border-box; /*propriedade para evitar o estouro do input*/
+  box-sizing: border-box;
+  /*propriedade para evitar o estouro do input*/
 }
 
 .form input[type="text"]:focus,
 .form input[type="email"]:focus,
 .form textarea:focus {
-  outline: none; /*tira a borda azul padrão do input*/
+  outline: none;
+  /*tira a borda azul padrão do input*/
   border-color: var(--cor-p1);
   background: var(--cor-0);
   box-shadow: 0 0 0 2px #fea;
@@ -45,6 +47,7 @@
   }
 
   .form .col-2 {
-    grid-column: 1; /*precisa redefinir a posição como coluna 1, porque definir apenas o 1fr não é suficiente, já que antes estava pra ocupar duas colunas com span 2*/
+    grid-column: 1;
+    /*precisa redefinir a posição como coluna 1, porque definir apenas o 1fr não é suficiente, já que antes estava pra ocupar duas colunas com span 2*/
   }
 }

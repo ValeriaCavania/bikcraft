@@ -12,7 +12,8 @@
   text-transform: uppercase;
   position: relative;
   display: flex;
-  align-items: center; /* display flex pra alinhar o before ao centro do h2*/
+  align-items: center;
+  /* display flex pra alinhar o before ao centro do h2*/
 }
 
 .orcamento h2::before {
@@ -33,18 +34,19 @@
 
 .orcamento-produto {
   border-radius: 5px 0 0 5px;
-  background: var(--cor-12);
+  background: var(--cor-12) url("../../img/dec/bottom-left.svg") no-repeat bottom 20px left 20px;
+  ;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   align-content: start;
 }
 
-.orcamento-produto > * {
+.orcamento-produto>* {
   grid-column: 1/-1;
 }
 
-.orcamento-produto > label {
+.orcamento-produto>label {
   grid-column: initial;
 }
 
@@ -59,17 +61,30 @@
   cursor: pointer;
   display: grid;
   grid-template-columns: auto 1fr auto;
+  align-items: center;
+  border: 1px solid var(--cor-11);
+  /*borda adicionada pra evitar "expansao" quando o elemento esta em focus*/
 }
 
-.orcamento-produto input:checked + label {
+.orcamento-produto input:checked+label {
   background: var(--cor-0);
   color: var(--cor-11);
+}
+
+.orcamento-produto label span {
+  display: none;
+}
+
+.orcamento-produto input:checked+label span {
+  display: inline-block;
+  /*quando checado, aparece o span (preco)*/
 }
 
 .orcamento-produto label::before {
   content: "";
   display: inline-block;
-  box-sizing: border-box; /*para que o circulo fiquei com no max 12px e não some a borda resultando em 13px*/
+  box-sizing: border-box;
+  /*para que o circulo fiquei com no max 12px e não some a borda resultando em 13px*/
   width: 12px;
   height: 12px;
   border: 1px solid var(--cor-7);
@@ -77,24 +92,101 @@
   margin-right: 8px;
 }
 
-.orcamento-produto input:checked + label::before {
+.orcamento-produto input:checked+label::before {
   box-shadow:
     inset 0 0 0 3px var(--cor-0),
     inset 0 0 0 6px var(--cor-7);
 }
 
+.orcamento-produto label:hover {
+  background-color: var(--cor-9);
+  border-color: var(--cor-9);
+}
+
+.orcamento-produto input:focus+label {
+  box-shadow: 0 0 0 2px var(--cor-p1);
+  border-color: var(--cor-12);
+}
+
 .orcamento-produto input[type="radio"] {
   opacity: 0;
   position: absolute;
-  pointer-events: none; /*impede que o input seja clicado acidentalmente, uma vez que ele foi apagado da tela, mas ainda existia, essa propriedade remove evento de clique sobre esse input;*/
+  pointer-events: none;
+  /*impede que o input seja clicado acidentalmente, uma vez que ele foi apagado da tela, mas ainda existia, essa propriedade remove evento de clique sobre esse input;*/
 }
 
 .orcamento-dados {
   border-radius: 0 5px 5px 0;
-  background: var(--cor-0);
+  background: var(--cor-0) url("../../img/dec/bottom-right.svg") no-repeat bottom 20px right 20px;
 }
 
-#bikcraft:checked ~ #orcamento-bikcraft,
-#seguro:checked ~ #orcamento-seguro {
-  display: block;
+.orcamento-conteudo {
+  display: none;
+}
+
+.orcamento-conteudo h2,
+.orcamento-dados h2:nth-of-type(n + 2) {
+  margin-top: 20px
+    /*seleciona apenas elementos h2 a partir do segundo*/
+  ;
+}
+
+#bikcraft:checked~#orcamento-bikcraft,
+#seguro:checked~#orcamento-seguro {
+  display: grid;
+  gap: 20px;
+}
+
+.orcamento-detalhes {
+  display: none;
+  background: var(--cor-0);
+  padding: 20px;
+  /* display: grid; */
+  grid-template-columns: 1fr 1fr;
+  border-radius: 4px;
+  align-items: center;
+}
+
+.orcamento-detalhes li {
+  display: flex;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.orcamento-detalhes li img {
+  width: 16px;
+  margin-right: 8px;
+}
+
+.orcamento-produto input:checked+label+.orcamento-detalhes {
+  display: grid;
+}
+
+@media(max-width: 1200px) {
+
+  .orcamento-produto,
+  .orcamento-dados {
+    padding: 32px;
+  }
+}
+
+@media(max-width: 800px) {
+  .orcamento {
+    grid-template-columns: 1fr;
+  }
+
+  .orcamento-produto {
+    border-radius: 5px 5px 0 0;
+    background: var(--cor-12)
+  }
+
+  .orcamento-dados {
+    border-radius: 0 0 5px 5px;
+  }
+}
+
+@media(max-width: 400px) {
+  .orcamento-produto {
+    grid-template-columns: 1fr;
+  }
 }
