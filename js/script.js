@@ -1,3 +1,4 @@
+//Ativar Links do Menu
 const links = document.querySelectorAll('.header-menu a');
 
 function ativarLink(link) {
@@ -7,5 +8,6 @@ function ativarLink(link) {
         link.classList.add('ativo');
     }
 }
-
 links.forEach(ativarLink);
+
+//Ativar items do Orçamento
