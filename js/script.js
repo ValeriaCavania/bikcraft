@@ -56,3 +56,8 @@ function eventosGaleria(img) {
   img.addEventListener("click", trocarImagem);
 }
 galeria.forEach(eventosGaleria);
+
+//Animação - coloca no if pra verificar apenas a página html que usa o plugin e não gerar erro de SimpleAnime is not defined
+if (window.SimpleAnime) {
+  new SimpleAnime();
+}
